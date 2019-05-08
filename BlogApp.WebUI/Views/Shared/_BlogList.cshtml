@@ -1,0 +1,19 @@
+@model IEnumerable<Blog>
+@{
+    Layout=null;
+}
+ @foreach (var item in Model)
+        {
+                       <div class="card mt-2">
+                        <div class="card-header">
+                        @item.Title
+                        </div>
+                          <img src="~/img/@item.Image" class="card-img" alt="...">
+                       
+                    <div class="card-body">
+                        <h5 class="card-title">@item.Title</h5>
+                        <p class="card-text">@item.Description</p>
+                         <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                    </div> 
+        }

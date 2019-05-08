@@ -1,0 +1,38 @@
+@model Blog
+@{
+    ViewData["Title"]="CreateorUpdate";
+}
+<div class="container">
+    <h2>Create or Update</h2>
+    <br/>
+
+<form action="~/blog/addorupdate" method="Post">
+<input type="hidden" asp-for="BlogId">
+  <div class="form-group">
+    <label asp-for="Title">Title</label>
+    <input asp-for="Title" class="form-control">
+  </div>
+  <div class="form-group">
+    <label asp-for="Description">Description</label>
+    <textarea asp-for="Description" class="form-control"></textarea>
+  </div>
+  <div class="form-group">
+    <label asp-for="Body">Body</label>
+    <textarea asp-for="Body" class="form-control"></textarea>
+  </div>
+  <div class="form-group">
+    <label asp-for="Image">Image</label>
+    <textarea asp-for="Image" class="form-control"></textarea>
+  </div>
+  <div class="form-group">
+    <label asp-for="CategoryId">Category</label>
+    <select class="form-control" asp-for="CategoryId" asp-items="@ViewBag.Categories">
+      <option enabled value="-1">
+        Select Category
+      </option>
+    </select>
+  </div>
+  <input type="submit" class="btn btn-success" value="Gönder">
+ 
+</form>
+</div>
